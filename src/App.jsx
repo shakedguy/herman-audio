@@ -10,8 +10,10 @@ const files = [firstAudio, secondAudio, firstAudio, secondAudio];
 
 function App() {
 	const [play, setPlay] = useState(false);
+	const [loop, setLoop] = useState(false);
 
 	const togglePlay = () => setPlay((p) => !p);
+	const toggleLoop = () => setLoop((l) => !l);
 
 	return (
 		<>
@@ -22,9 +24,11 @@ function App() {
 					file={file}
 					type='audio/mp3'
 					isPlay={play}
+					loop={loop}
 				/>
 			))}
 			<button onClick={togglePlay}>{play ? 'Pause' : 'Play'}</button>
+			<button onClick={toggleLoop}>{loop ? 'Stop Loop' : 'Loop'}</button>
 		</>
 	);
 }

@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 
-export default function AudioStripe({ color, file, type, isPlay }) {
+export default function AudioStripe({ color, file, type, isPlay, loop }) {
 	const ref = useRef();
 	const [mute, setMute] = useState(false);
 
@@ -30,6 +30,7 @@ export default function AudioStripe({ color, file, type, isPlay }) {
 				src={file}
 				type={type}
 				muted={mute}
+				loop={loop}
 			></audio>
 			<button
 				className='btn-mute'
